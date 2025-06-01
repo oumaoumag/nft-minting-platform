@@ -1,0 +1,181 @@
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Layer for custom component styles */
+@layer components {
+  /* Card gradient backgrounds with proper opacity */
+  .card-gradient {
+    background: linear-gradient(135deg, 
+      rgba(124, 58, 237, 0.5), 
+      rgba(234, 88, 12, 0.5)
+    );
+  }
+  
+  .card-gradient-compact {
+    background: linear-gradient(135deg, 
+      rgba(124, 58, 237, 0.5), 
+      rgba(234, 88, 12, 0.5)
+    );
+  }
+  
+  /* Button gradients */
+  .btn-gradient-primary {
+    background: linear-gradient(90deg, #eab308, #f97316);
+  }
+  
+  /* Coin icon gradient */
+  .coin-gradient {
+    background: linear-gradient(135deg, #facc15, #f97316);
+  }
+  
+  /* Text gradients */
+  .text-gradient-primary {
+    background: linear-gradient(90deg, #fde047, #fdba74);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Header gradient */
+  .header-gradient {
+    background: linear-gradient(90deg, #581c87 0%, #ea580c 50%, #eab308 100%);
+  }
+}
+
+/* Custom CSS Variables for consistent theming */
+:root {
+  --color-purple-900: #581c87;
+  --color-purple-800: #7c3aed;
+  --color-orange-900: #9a3412;
+  --color-orange-800: #ea580c;
+  --color-orange-500: #f97316;
+  --color-orange-300: #fdba74;
+  --color-yellow-500: #eab308;
+  --color-yellow-400: #facc15;
+  --color-yellow-300: #fde047;
+}
+
+/* Base styles to ensure visibility */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom utility classes */
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out;
+}
+
+/* Line clamping utilities */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Scrollbar styling for better dark theme integration */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(250, 204, 21, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(250, 204, 21, 0.5);
+}
+
+/* Backdrop filter support */
+@supports (backdrop-filter: blur(10px)) {
+  .backdrop-blur-lg {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(10px)) {
+  .backdrop-blur-lg {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Fix for gradient overlays on dark backgrounds */
+.bg-gradient-overlay {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-gradient-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  border-radius: inherit;
+  opacity: 0.5;
+}

@@ -11,7 +11,7 @@ import {
 import AppLayout from '../components/Layout/AppLayout';
 import NFTDebugger from '../components/NFTDebugger';
 import { LAYOUT } from '../styles/design-system';
-import './App.css';
+import './index.css';
 
 // Import debug utilities in development
 if (process.env.NODE_ENV === 'development') {
