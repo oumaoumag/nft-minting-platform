@@ -1,0 +1,26 @@
+{
+  "name": "contracts",
+  "version": "1.0.0",
+  "description": "A production-ready NFT platform smart contract that combines ERC721 NFTs with custom token rewards. When users mint NFTs, creators automatically earn Creator Tokens (CTK) as rewards.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@openzeppelin/contracts": "^5.3.0",
+    "hardhat": "^2.24.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethers": "^6.14.3"
+  }
+}
